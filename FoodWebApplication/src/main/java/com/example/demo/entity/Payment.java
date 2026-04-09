@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,22 +10,23 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "food_items")
-
-public class FoodItem {
+@Table(name = "payment")
+public class Payment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private Long id;
-	private String itemName;
-	private String price;
-	private String discription;
-	private String category;
-	private String available;
-	private String imageUrl;
-	private Double rating;
-	private Integer restaurantId;
+	
+	private Long orderId;
+	
+	private Double amount;
+	
+	private String status;
+	
+	private String paymentId;
+	
+	
 	
 	
 

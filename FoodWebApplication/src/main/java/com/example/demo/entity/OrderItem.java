@@ -5,27 +5,31 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "food_items")
-
-public class FoodItem {
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "orderItem")
+public class OrderItem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private Long id;
-	private String itemName;
-	private String price;
-	private String discription;
-	private String category;
-	private String available;
-	private String imageUrl;
-	private Double rating;
-	private Integer restaurantId;
 	
+	private Long orderId;
+	
+	private Long foodItemId;
+	
+	private String foodName;
+	
+	private Integer quntity;
+	
+	private Double price;
 	
 
 }
